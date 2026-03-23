@@ -1,0 +1,208 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: cover;
+  background-position: 85% center;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 2s ease-in-out, transform 20s ease-out;
+  z-index: 0;
+  filter: brightness(1.15);
+}
+
+.hero-bg.active {
+  opacity: 1;
+  transform: scale(1.12);
+}
+
+@media (min-width: 768px) {
+  .hero-bg {
+    background-position: center 20%;
+  }
+}
+
+.hero > .container {
+  width: 100%;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  /* Mobile: stronger left gradient since text covers more real-estate */
+  background: linear-gradient(to right, rgba(17, 17, 17, 0.95) 0%, rgba(17, 17, 17, 0.8) 55%, rgba(17, 17, 17, 0.3) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .hero-overlay {
+    background: linear-gradient(to right, rgba(17, 17, 17, 0.95) 0%, rgba(17, 17, 17, 0.6) 45%, rgba(17, 17, 17, 0.1) 85%, rgba(17, 17, 17, 0) 100%);
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #FFFFFF;
+  max-width: 650px;
+  padding: 80px 20px 0 20px; /* 80px top buffer + 20px side edges */
+}
+
+@media (min-width: 768px) {
+  .hero-content {
+    padding: 100px 0 0 0; /* 100px top buffer on desktop */
+  }
+}
+
+.hero-headline {
+  font-size: 2.25rem;
+  margin-bottom: var(--space-3);
+  color: #FFFFFF;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  line-height: 1.15;
+}
+
+@media (min-width: 768px) {
+  .hero-headline {
+    font-size: 4.5rem;
+    line-height: 1.2;
+  }
+}
+
+.hero-sub {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: #D4A853;
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin-bottom: var(--space-3);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+@media (min-width: 768px) {
+  .hero-sub {
+    font-size: 1.6rem;
+  }
+}
+
+.hero-social-proof-strip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: var(--space-5);
+  opacity: 0;
+  animation: customFadeUpHero 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation-delay: 0.5s;
+}
+
+.star-icon {
+  color: var(--accent-gold);
+  font-size: 1.1rem;
+}
+
+.proof-text {
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.4);
+}
+
+.hero-ctas {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center; /* Aligns distinctly sized buttons optically to their vertical centers */
+  gap: 16px;
+  margin-bottom: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .hero-ctas {
+    gap: 24px; /* Added substantial gap */
+  }
+}
+
+.hero-btn {
+  flex: 1 1 auto;
+  text-align: center;
+  justify-content: center;
+  display: inline-flex;
+}
+
+@media (min-width: 768px) {
+  .hero-btn {
+    flex: 0 0 auto;
+  }
+}
+
+/* Make Book Now explicitly Thinner/Golden Glow */
+.btn-primary.hero-btn {
+  background-color: var(--accent-gold);
+  color: var(--primary-dark) !important;
+  font-weight: 600;
+  padding: 12px 28px; /* Thinner Mobile */
+  font-size: 0.95rem;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 0 25px rgba(212, 168, 83, 0.35); /* Iconic glowing drop shadow */
+}
+
+@media (min-width: 768px) {
+  .btn-primary.hero-btn {
+    padding: 14px 32px; /* Thinner distinct Desktop layout */
+    font-size: 1rem;
+  }
+}
+
+.btn-primary.hero-btn:hover {
+  color: var(--primary-dark) !important;
+}
+
+.btn-primary.hero-btn::before {
+  background-color: #FFFFFF !important;
+}
+
+/* Secondary Button Muted / Uppercase */
+.btn-secondary.hero-btn {
+  background-color: transparent;
+  color: #A0A0A0; /* Muted reference text */
+  border: 1px solid rgba(255, 255, 255, 0.25); /* Faint reference outline */
+  font-weight: 600;
+  text-transform: uppercase; /* Reference layout */
+  letter-spacing: 0.05em;
+  padding: 12px 28px; /* Matching thinner primary height */
+  font-size: 0.75rem; /* Noticeably smaller typography */
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .btn-secondary.hero-btn {
+    padding: 14px 32px;
+    font-size: 0.8rem;
+  }
+}
+
+.btn-secondary.hero-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05); /* Extremely subtle */
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #FFFFFF;
+}

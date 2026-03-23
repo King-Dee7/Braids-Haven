@@ -1,0 +1,54 @@
+.fomo-toast {
+  position: fixed;
+  bottom: var(--space-4);
+  left: var(--space-4);
+  background-color: var(--card-bg);
+  color: var(--primary-dark);
+  padding: var(--space-2) var(--space-3);
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  border-left: 3px solid var(--accent-gold);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+.fomo-toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.fomo-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.pulse-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #E53935;
+  border-radius: 50%;
+  animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+  0% { box-shadow: 0 0 0 0 rgba(229, 57, 53, 0.4); }
+  70% { box-shadow: 0 0 0 6px rgba(229, 57, 53, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(229, 57, 53, 0); }
+}
+
+@media (max-width: 768px) {
+  .fomo-toast {
+    bottom: var(--space-2);
+    left: var(--space-2);
+    font-size: 0.75rem;
+  }
+}

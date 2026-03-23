@@ -1,0 +1,6 @@
+# Braids Haven - robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap location (update domain when deploying)
+Sitemap: https://braidshaven.fi/sitemap.xml

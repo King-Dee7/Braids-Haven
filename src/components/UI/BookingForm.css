@@ -1,0 +1,115 @@
+.booking-container {
+  background-color: var(--card-bg);
+  padding: var(--space-6) var(--space-4);
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .booking-container {
+    padding: var(--space-8);
+  }
+}
+
+.booking-title {
+  text-align: center;
+  font-size: 2.25rem;
+  margin-bottom: var(--space-6);
+  color: var(--primary-dark);
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+@media (min-width: 600px) {
+  .form-row {
+    flex-direction: row;
+  }
+  .form-row .form-group {
+    flex: 1;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-group label {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--secondary-dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 12px 16px;
+  border: 1px solid var(--divider-col);
+  border-radius: 4px;
+  background-color: var(--bg-color);
+  color: var(--primary-dark);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 2px rgba(184, 150, 78, 0.2);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  font-size: 1.125rem;
+  margin-top: var(--space-4);
+}
+
+.booking-success {
+  text-align: center;
+  padding: var(--space-8) var(--space-4);
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.success-icon {
+  width: 60px;
+  height: 60px;
+  background-color: var(--accent-gold);
+  color: var(--primary-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto var(--space-4);
+}
+
+.booking-success h2 {
+  font-size: 2rem;
+  margin-bottom: var(--space-2);
+}
+
+.booking-success p {
+  color: var(--secondary-dark);
+  font-size: 1.125rem;
+}

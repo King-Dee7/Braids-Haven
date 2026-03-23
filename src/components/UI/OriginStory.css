@@ -1,0 +1,50 @@
+.origin-story {
+  padding: var(--space-8) 0 var(--space-5) 0;
+  background-color: var(--bg-color);
+  text-align: center;
+}
+
+.origin-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.origin-kicker {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--accent-gold);
+  margin-bottom: var(--space-4);
+  font-weight: 600;
+}
+
+.origin-main {
+  font-family: var(--font-body);
+  font-size: 2rem;
+  margin-bottom: var(--space-4);
+  color: var(--primary-dark);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.origin-main .origin-highlight {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--accent-gold);
+}
+
+@media (min-width: 768px) {
+  .origin-main {
+    font-size: 3rem;
+  }
+}
+
+.origin-sub {
+  font-size: 1.125rem;
+  color: var(--secondary-dark);
+  font-family: var(--font-body);
+  opacity: 0.8;
+}
+

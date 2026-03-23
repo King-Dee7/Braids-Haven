@@ -1,0 +1,22 @@
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  background: var(--accent-gold);
+  color: var(--primary-dark);
+  padding: 12px 24px;
+  border-radius: 0 0 8px 8px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid var(--primary-dark);
+  outline-offset: 2px;
+}
