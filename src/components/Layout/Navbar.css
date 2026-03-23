@@ -79,12 +79,15 @@
   opacity: 0.7;
 }
 
-.navbar-pill.at-top .brand-text,
-.navbar-pill.at-top .nav-link,
-.navbar-pill.at-top .menu-icon {
+.navbar-pill.is-home.at-top .brand-text,
+.navbar-pill.is-home.at-top .nav-link,
+.navbar-pill.is-home.at-top .menu-icon {
   color: #FFFFFF !important;
 }
 
+.navbar-pill.is-inner.at-top .brand-text,
+.navbar-pill.is-inner.at-top .nav-link,
+.navbar-pill.is-inner.at-top .menu-icon,
 .navbar-pill.scrolled .brand-text,
 .navbar-pill.scrolled .nav-link,
 .navbar-pill.scrolled .menu-icon {

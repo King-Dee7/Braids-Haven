@@ -24,7 +24,7 @@ const Navbar = ({ lang }) => {
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
 
-  const navClass = isScrolled ? 'scrolled' : 'at-top';
+  const navClass = `${isScrolled ? 'scrolled' : 'at-top'} ${location.pathname === '/' ? 'is-home' : 'is-inner'}`;
 
   return (
     <div className="navbar-wrapper">
