@@ -32,7 +32,7 @@ const BookingForm = ({ lang }) => {
     setStatus('submitting');
 
     try {
-      const response = await fetch(WEBHOOK_URL, {
+      await fetch(WEBHOOK_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -47,3 +47,22 @@
     transform-origin: bottom right;
   }
 }
+
+
+@media (max-width: 767px) {
+  .lang-widget-container {
+    bottom: calc(14px + env(safe-area-inset-bottom));
+    right: 14px;
+    transform: none;
+  }
+
+  .lang-widget-pill {
+    padding: 3px;
+  }
+
+  .lang-widget-btn {
+    min-width: 44px;
+    min-height: 40px;
+    padding: 8px 12px;
+  }
+}

@@ -1,9 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+const MotionDiv = motion.div;
+
 const ScrollReveal = ({ children, delay = 0, y = 50, duration = 0.8, className = '' }) => {
   return (
-    <motion.div
+    <MotionDiv
       className={className}
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -11,7 +13,7 @@ const ScrollReveal = ({ children, delay = 0, y = 50, duration = 0.8, className =
       transition={{ duration, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
-    </motion.div>
+    </MotionDiv>
   );
 };
 

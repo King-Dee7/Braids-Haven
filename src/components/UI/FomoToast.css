@@ -1,6 +1,6 @@
 .fomo-toast {
   position: fixed;
-  bottom: var(--space-4);
+  bottom: calc(var(--space-4) + env(safe-area-inset-bottom));
   left: var(--space-4);
   background-color: var(--card-bg);
   color: var(--primary-dark);
@@ -50,5 +50,23 @@
     bottom: var(--space-2);
     left: var(--space-2);
     font-size: 0.75rem;
+  }
+}
+
+
+.fomo-toast {
+  max-width: min(360px, calc(100vw - 32px));
+}
+
+.fomo-content p {
+  line-height: 1.4;
+}
+
+@media (max-width: 767px) {
+  .fomo-toast {
+    left: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    padding: 10px 12px;
+    max-width: calc(100vw - 24px);
   }
 }
