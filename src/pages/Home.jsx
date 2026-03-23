@@ -8,6 +8,7 @@ import SocialProof from '../components/UI/SocialProof';
 import Quiz from '../components/UI/Quiz';
 import About from '../components/UI/About';
 import FomoToast from '../components/UI/FomoToast';
+import ScrollReveal from '../components/UI/ScrollReveal';
 
 const Home = ({ lang }) => {
   const t = translations[lang];
@@ -23,12 +24,29 @@ const Home = ({ lang }) => {
         description="Braids Haven offers premium African braiding in Helsinki & Espoo. Knotless braids, cornrows, passion twists, fulani braids & more. Rooted in Accra, brought to Finland. Book your style today."
         path="/"
       />
+      
       <Hero lang={lang} />
-      <OriginStory lang={lang} />
-      <HighlightedServices lang={lang} />
-      <Quiz lang={lang} />
-      <SocialProof lang={lang} />
-      <About lang={lang} />
+      
+      <ScrollReveal>
+        <OriginStory lang={lang} />
+      </ScrollReveal>
+      
+      <ScrollReveal delay={0.1}>
+        <HighlightedServices lang={lang} />
+      </ScrollReveal>
+      
+      <ScrollReveal delay={0.1}>
+        <Quiz lang={lang} />
+      </ScrollReveal>
+      
+      <ScrollReveal delay={0.1}>
+        <SocialProof lang={lang} />
+      </ScrollReveal>
+      
+      <ScrollReveal delay={0.1}>
+        <About lang={lang} />
+      </ScrollReveal>
+      
       <FomoToast lang={lang} />
     </div>
   );

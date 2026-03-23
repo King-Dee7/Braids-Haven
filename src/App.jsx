@@ -1,5 +1,6 @@
-import { lazy, Suspense, useState } from 'react';
+import { lazy, Suspense, useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import Lenis from 'lenis';
 import Navbar from './components/Layout/Navbar';
 import Footer from './components/Layout/Footer';
 import LanguageWidget from './components/UI/LanguageWidget';
@@ -16,6 +17,18 @@ const NotFound = lazy(() => import('./pages/NotFound'));
 function App() {
   const [lang, setLang] = useState('en');
 
+  useEffect(() => {
+    const lenis = new Lenis({
+      lerp: 0.1,
+      smoothWheel: true,
+    });
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+    return () => lenis.destroy();
+  }, []);
   const toggleLanguage = () => {
     setLang((prev) => (prev === 'en' ? 'fi' : 'en'));
   };
