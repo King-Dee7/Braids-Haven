@@ -31,13 +31,25 @@
   padding: 0;
 }
 
-html, body {
+html {
   background-color: var(--bg-color);
   color: var(--primary-dark);
   font-family: var(--font-body);
   line-height: 1.6;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--primary-dark);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  min-width: 320px;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -136,5 +148,40 @@ textarea:focus-visible,
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+
+html[data-scroll-mode='native'] {
+  scroll-behavior: smooth;
+}
+
+html[data-scroll-mode='lenis'] {
+  scroll-behavior: auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 18px;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .btn-primary:hover,
+  .service-card:hover,
+  .testimonial-card:hover,
+  .loyalty-card:hover,
+  .quiz-option-btn:hover,
+  .not-found-btn:hover {
+    transform: none;
+    box-shadow: inherit;
+  }
+
+  .btn-primary:hover::before {
+    transform: translateY(100%);
   }
 }

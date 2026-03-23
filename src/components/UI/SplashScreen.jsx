@@ -2,15 +2,13 @@ import React, { useEffect, useState } from 'react';
 import './SplashScreen.css';
 
 const SplashScreen = () => {
-  const [showSplash, setShowSplash] = useState(true);
-  const [isRendered, setIsRendered] = useState(true);
+  const hasSeenSplash = typeof window !== 'undefined' && window.sessionStorage.getItem('hasSeenSplash');
+  const [showSplash, setShowSplash] = useState(!hasSeenSplash);
+  const [isRendered, setIsRendered] = useState(!hasSeenSplash);
 
   useEffect(() => {
-    // Check session storage to only play once per browser session
-    if (sessionStorage.getItem('hasSeenSplash')) {
-      setShowSplash(false);
-      setIsRendered(false);
-      return;
+    if (!showSplash) {
+      return undefined;
     }
 
     // Lock body scrolling immediately
@@ -34,7 +32,7 @@ const SplashScreen = () => {
       clearTimeout(timer);
       document.body.style.overflow = 'auto';
     };
-  }, []);
+  }, [showSplash]);
 
   if (!isRendered) return null;
 

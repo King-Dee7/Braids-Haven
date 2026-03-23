@@ -18,16 +18,38 @@ function App() {
   const [lang, setLang] = useState('en');
 
   useEffect(() => {
-    const lenis = new Lenis({
-      lerp: 0.1,
-      smoothWheel: true,
-    });
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches || window.matchMedia('(hover: none)').matches;
+
+    if (prefersReducedMotion || isTouchDevice) {
+      document.documentElement.dataset.scrollMode = 'native';
+      return () => {
+        delete document.documentElement.dataset.scrollMode;
+      };
     }
-    requestAnimationFrame(raf);
-    return () => lenis.destroy();
+
+    document.documentElement.dataset.scrollMode = 'lenis';
+
+    const lenis = new Lenis({
+      lerp: 0.085,
+      wheelMultiplier: 0.95,
+      smoothWheel: true,
+      syncTouch: false,
+    });
+
+    let frameId = 0;
+    const raf = (time) => {
+      lenis.raf(time);
+      frameId = window.requestAnimationFrame(raf);
+    };
+
+    frameId = window.requestAnimationFrame(raf);
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+      lenis.destroy();
+      delete document.documentElement.dataset.scrollMode;
+    };
   }, []);
   const toggleLanguage = () => {
     setLang((prev) => (prev === 'en' ? 'fi' : 'en'));

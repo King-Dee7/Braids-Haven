@@ -205,3 +205,40 @@
     padding: 10px 20px;
   }
 }
+
+
+@media (max-width: 768px) {
+  .navbar-wrapper {
+    top: 12px;
+    padding: 0 14px;
+  }
+
+  .navbar-pill {
+    min-height: 64px;
+    padding: 10px 16px;
+    border-radius: 24px;
+  }
+
+  .brand-text {
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+  }
+
+  .menu-btn {
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-menu-panel {
+    padding: 20px;
+    gap: 16px;
+    border-radius: 20px;
+  }
+
+  .mob-link {
+    font-size: 1rem;
+    padding: 6px 0;
+  }
+}

@@ -19,10 +19,6 @@ const Navbar = ({ lang }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on route change
-  useEffect(() => {
-    setIsMobileMenuOpen(false);
-  }, [location.pathname]);
 
   const navClass = `${isScrolled ? 'scrolled' : 'at-top'} ${location.pathname === '/' ? 'is-home' : 'is-inner'}`;
 

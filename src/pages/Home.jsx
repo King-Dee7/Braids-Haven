@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { translations } from '../utils/translations';
 import PageMeta from '../components/SEO/PageMeta';
 import Hero from '../components/UI/Hero';
 import OriginStory from '../components/UI/OriginStory';
@@ -11,8 +10,6 @@ import FomoToast from '../components/UI/FomoToast';
 import ScrollReveal from '../components/UI/ScrollReveal';
 
 const Home = ({ lang }) => {
-  const t = translations[lang];
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

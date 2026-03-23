@@ -1,11 +1,8 @@
 import React, { useEffect } from 'react';
-import { translations } from '../utils/translations';
 import PageMeta from '../components/SEO/PageMeta';
 import BookingForm from '../components/UI/BookingForm';
 
 const Booking = ({ lang }) => {
-  const t = translations[lang];
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

@@ -122,3 +122,19 @@
   color: #666666;
   font-size: 0.8rem;
 }
+
+
+@media (max-width: 767px) {
+  .footer {
+    padding: 32px 0 24px 0;
+  }
+
+  .footer-grid {
+    gap: 28px 18px;
+  }
+
+  .footer-tagline,
+  .footer-bottom p {
+    line-height: 1.5;
+  }
+}

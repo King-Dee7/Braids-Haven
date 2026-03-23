@@ -97,3 +97,25 @@
   color: #D4A853;
   margin-top: var(--space-4);
 }
+
+
+@media (max-width: 767px) {
+  .about-section {
+    padding: 84px 0;
+  }
+
+  .about-title {
+    font-size: 2.1rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .about-bio {
+    padding-left: 16px;
+    margin-bottom: var(--space-4);
+  }
+
+  .about-bio p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}

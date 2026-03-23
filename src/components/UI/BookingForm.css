@@ -113,3 +113,27 @@
   color: var(--secondary-dark);
   font-size: 1.125rem;
 }
+
+
+@media (max-width: 767px) {
+  .booking-container {
+    padding: 28px 18px;
+    border-radius: 18px;
+  }
+
+  .booking-title {
+    font-size: 1.9rem;
+    margin-bottom: var(--space-5);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea,
+  .submit-btn {
+    min-height: 52px;
+  }
+
+  .form-group textarea {
+    min-height: 132px;
+  }
+}

@@ -1,5 +1,4 @@
 import React from 'react';
-import { translations } from '../../utils/translations';
 import './SocialProof.css';
 
 const testimonials = [
@@ -29,9 +28,7 @@ const testimonials = [
   }
 ];
 
-const SocialProof = ({ lang }) => {
-  const t = translations[lang];
-
+const SocialProof = () => {
   return (
     <section className="social-proof">
       <div className="container">

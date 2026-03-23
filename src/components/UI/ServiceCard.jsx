@@ -3,7 +3,7 @@ import { translations } from '../../utils/translations';
 import { Link } from 'react-router-dom';
 import './ServiceCard.css';
 
-const ServiceCard = ({ title, price, duration, image, imageAlt, scarcity, hidePrice, lang }) => {
+const ServiceCard = ({ title, price, image, imageAlt, hidePrice, lang }) => {
   const t = translations[lang];
 
   return (
