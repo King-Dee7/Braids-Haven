@@ -51,17 +51,6 @@ const SocialProof = ({ lang }) => {
           ))}
         </div>
         
-        <div className="sp-stats-strip">
-          <div className="stat-item">
-            <h3>{t.stat1}</h3>
-          </div>
-          <div className="stat-item">
-            <h3>{t.stat2}</h3>
-          </div>
-          <div className="stat-item">
-            <h3>{t.stat3}</h3>
-          </div>
-        </div>
       </div>
     </section>
   );
